@@ -3,20 +3,207 @@
 <head>
 	<title>Hello World!</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style type="text/css">
+		.container{
+			width: 800px;
+			height: 200px;
+			border: 5px dotted red;
+			padding: 10px;
+			padding-top: 20px;
+			/*margin: 10px;*/
+			margin-top: 10px;
+			margin-bottom: 10px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	</style>
 </head>
 <body>
+	<!-- This is a comment -->
 	<h1>Header 1</h1>
-	<h2>Header 2</h2>
+	<h2 class="header">Header 2</h2>
 	<h3>Header 3</h3>
-	<h4>Header 4</h4>
+	<h4 class="header">Header 4</h4>
 	<h5>Header 5</h5>
-	<h6>Header 6</h6>
-	<p>This is a paragraph</p>
+	<h6 class="header">Header 6</h6>
+
+	<img src="images/Laptop-computer.jpg" width="350" height="100">
+	<img src="http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSBPGwCy_mUW4fb-" width="350" height="100">
+
+	<p id="first">This is a paragraph</p>
 	<p>This is another paragraph</p>
 	<p>Let's Make it <strong>Bold</strong></p>
 	<p>Let's Make it <em>Emphasis</em></p>
 	<p>Let's Make it <u>Emphasis</u></p>
 	<p>Go to <a href="hello/hello.html">Hello</a></p>
 	<p>Go to <a href="https://www.facebook.com/azim.uddin.tipu" title="Facebook" target="_blank">Azim's Profile</a></p>
+	<ul>
+		<li>
+			<h4>Item 1</h4>
+			<p>Paragraph Item <br> <a href="hello/hello.html">Say Hello</a></p>
+			<img src="images/Laptop-computer.jpg" width="350" height="100">
+		</li>
+		<li>
+			<h4>Item 2</h4>
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ul>
+			<ol>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ol>
+		</li>
+		<li>
+			<h4>Item 3</h4>
+			<ol>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ol>
+		</li>
+	</ul>
+
+	<ol>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ol>
+
+	<ol>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ol>
+
+	<form method="get" action="submit.php">
+		<label for="text">Text</label>
+		<input type="text" name="text" id="text" placeholder="Text" required value="Hello"><br>
+		<label for="number">Number</label>
+		<input type="number" name="number" id="number" placeholder="Number" max="10" min="-10" step="5" required><br>
+		<label for="email">Email</label>
+		<input type="email" name="email" id="email" placeholder="Email" required value="@gmail.com"><br>
+		<label for="phone">Phone</label>
+		<input type="phone" name="phone" id="phone" placeholder="Phone"><br>
+
+		<label for="textarea">Textarea</label>
+		<textarea name="textarea" id="textarea" placeholder="textarea"></textarea><br>
+
+		<label for="select">Textarea</label>
+		<select name="select" id="select">
+			<option value="option1">Option 1</option>
+			<option value="option2" selected>Option 2</option>
+			<option value="option3">Option 3</option>
+		</select><br>
+
+		<input type="checkbox" name="checkbox1" id="checkbox1"> <label for="checkbox1">Check Box 1</label>
+		<input type="checkbox" name="checkbox2" id="checkbox2"> <label for="checkbox2">Check Box 2</label><br>
+
+		<input type="radio" name="radio" id="radio1"> <label for="radio1">Radio 1</label>
+		<input type="radio" name="radio" id="radio2"> <label for="radio2">Radio 2</label><br>
+
+		<ol>
+			<li><input type="radio" name="radio1" id="radio11"> <label for="radio11">Radio 1</label></li>
+			<li><input type="radio" name="radio1" id="radio12"> <label for="radio12">Radio 2</label></li>
+			<li><input type="radio" name="radio1" id="radio13"> <label for="radio13">Radio 3</label></li>
+		</ol>
+
+		<button type="submit" title="Click This to Submit">Submit</button>
+		<button type="button" onclick="alert('hello')">Button</button>
+		<button type="reset">Reset</button>
+	</form>
+
+
+
+	<table width="500" border="1" align="center" cellspacing="0" cellpadding="10">
+		<thead>
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td colspan="2">5</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td rowspan="2">4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td colspan="6">
+					<marquee scrollamount="1" scrolldirection="left">Scrollable text</marquee>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+			</tr>
+		</tfoot>
+	</table>
+
+
+	<div class="container">
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</div>
+	<div class="container" style="outline-width: 10px; outline-style: solid; outline-color: red;">
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>
