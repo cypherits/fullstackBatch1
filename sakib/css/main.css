@@ -1,0 +1,60 @@
+body{
+	font-family: sans-serif;
+}
+.container{
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	margin-top: 0;
+	background-color: #f8f8f8;
+}
+header, section{
+	padding: 0;
+	margin: 0;
+}
+section{
+	background-color: cyan;
+	height: 900px;
+}
+.no-gutter{
+	padding: 0px;
+	margin: 0px;
+}
+.d-inline{
+	display: inline-block;
+}
+.logo, .logo img{
+	width: 150px;
+	height: 150px;
+}
+.banner, .banner img{
+	width: 450px;
+	height: 150px;
+}
+.search-box{
+	width: 292px;
+	height: 96px;
+	background-color: orange;
+	color: white;
+	float: right;
+	padding-top: 54px;
+}
+.search-input{
+	display: inline-block;
+    width: 226px;
+    font-size: 1.1em;
+    padding: .5em;
+    float: left;
+}
+.search-box img{
+	height: 43px;
+}
+.col{
+	width: 33.33%;
+	float: left;
+}
+.col img{
+	width: 100%;
+	float: left;
+}
