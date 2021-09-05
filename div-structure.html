@@ -5,6 +5,9 @@
 	<style type="text/css">
 		body{
 			background-color: #f8f8f8;
+			background-image: url(images/bg-p.png);
+			background-repeat: all;
+			background-attachment: scroll;
 		}
 		#contaier{
 			width: 1200px;
@@ -26,16 +29,56 @@
 			height: 70px;
 			background-color: cyan;
 		}
+
+		label.form-label{
+			display: block;
+			width: 100%;
+			font-size: 1.2em;
+			padding: 12px 8px;
+		}
+		input.form-control, select.form-control, textarea.form-control{
+			display: block;
+			width: calc(100% - 40px);
+			margin: 8px;
+			font-size: 1.2em;
+			padding: 8px 12px;
+		}
+		input.form-control:focus, select.form-control:focus, textarea.form-control:focus{
+			border: 1px solid #04aa6dbf;
+			outline: 1px solid #04aa6dbf;
+		}
+		select.form-control{
+			width: calc(100% - 16px);
+		}
+		textarea.form-control{
+			font-size: 1.8em;
+			height: 80px;
+		}
 	</style>
 </head>
 <body>
 	<div id="contaier">
 		<div id="header">
-			<div style="width: 200px; height: 150px; background-color: yellow; display: inline-block;"><h1>Logo</h1></div>
+			<div style="width: 200px; height: 150px; background-color: yellow; display: inline-block;"><h1><a href="index.html#designed-form">Logo</a></h1></div>
 			<div style="width: 996px; height: 150px; display: inline-block;"><h1>Banner</h1></div>
 		</div>
 		<div id="mainbody">
-			
+			<div style="width: 600px; background-color: #eee; padding: 20px; color: #6f6f6f;" id="designed-form">
+				<form method="post" action="#">
+					<label class="form-label" for="designed-form-name">Your Name</label>
+					<input class="form-control" type="text" name="name" placeholder="Your Name" id="designed-form-name">
+					<label class="form-label" for="designed-form-email">Your Email</label>
+					<input class="form-control" type="email" name="email" placeholder="Your Email" id="designed-form-email">
+					<label for="designed-form-select" class="form-label">Select</label>
+					<select name="select" id="designed-form-select" class="form-control">
+						<option value="option1">Option 1</option>
+						<option value="option2" selected>Option 2</option>
+						<option value="option3">Option 3</option>
+					</select>
+					<label for="designed-form-textarea" class="form-label">Textarea</label>
+					<textarea name="textarea" id="designed-form-textarea" placeholder="textarea" class="form-control"></textarea>
+				</form>
+			</div>
 		</div>
 		<div id="footer"></div>
 	</div>

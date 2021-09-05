@@ -60,6 +60,7 @@
 <body>
 	<!-- This is a comment -->
 	<div class="fixed-box"></div>
+	<p><a href="#designed-form">Go to Designed Form</a></p>
 	<div class="relative-box">
 		<div class="absolute-box"></div>
 	</div>
@@ -134,7 +135,7 @@
 		<label for="textarea">Textarea</label>
 		<textarea name="textarea" id="textarea" placeholder="textarea"></textarea><br>
 
-		<label for="select">Textarea</label>
+		<label for="select">Select</label>
 		<select name="select" id="select">
 			<option value="option1">Option 1</option>
 			<option value="option2" selected>Option 2</option>
@@ -365,6 +366,31 @@
 			</tr>
 		</tfoot>
 	</table>
+
+	<div style="width: 600px; background-color: #eee; padding: 20px;" id="designed-form">
+		<form method="post" action="#">
+			<label class="form-label" for="designed-form-name">Your Name</label>
+			<input class="form-control" type="text" name="name" placeholder="Your Name" id="designed-form-name">
+			<label class="form-label" for="designed-form-email">Your Email</label>
+			<input class="form-control" type="email" name="email" placeholder="Your Email" id="designed-form-email">
+			<label for="designed-form-select" class="form-label">Select</label>
+			<select name="select" id="designed-form-select" class="form-control">
+				<option value="option1">Option 1</option>
+				<option value="option2" selected>Option 2</option>
+				<option value="option3">Option 3</option>
+			</select>
+			<label for="designed-form-textarea" class="form-label">Textarea</label>
+			<textarea name="textarea" id="designed-form-textarea" placeholder="textarea" class="form-control"></textarea>
+			<button class="btn" type="submit">Submit</button>
+		</form>
+	</div>
+	<div style="width: 500px; height: 500px; margin-top: 2em; background-color: #8f8f8f; position: relative; color: #f8f8f8;">
+		<p class="text-justify">
+			<img src="images/Laptop-computer.jpg" style="width: 100px; margin: 10px; margin-bottom: -1px; float: right; border: 3px solid #ddd; border-radius: 5px;">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		</p>
+		<div style="width: 200px; height: 200px; position: absolute; left: 0; top: 0; background: #04aa6d; opacity: 0.6;"></div>
+	</div>
 <br>
 <br>
 <br>
