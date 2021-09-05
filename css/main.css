@@ -1,10 +1,95 @@
+@font-face{
+	font-family: myHead;
+	src: url('Lobster/Lobster-Regular.ttf');
+}
 h1{
+	font-family: myHead, sans-serif;
 	background-color: blue;
 	color: #7bfff9;
+}
+p{
+	line-height: 1.8;
 }
 .header{
 	background-color: rgb(110, 110, 165);
 }
 #first{
 	color: rgba(110, 110, 165, 0.7);
+}
+.text-red{
+	color: red;
+}
+.text-green{
+	color: #04aa6d;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.text-center{
+	text-align: center;
+}
+.text-justify{
+	text-align: justify;
+}
+.text-underline{
+	text-decoration: underline;
+}
+.text-upper{
+	text-transform: uppercase;
+}
+.text-bold{
+	font-weight: bold;
+}
+.text-em{
+	font-style: italic;
+	font-size: 28px;
+}
+.unordered{
+	margin: 0;
+	padding: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	color: green;
+}
+.ordered{
+	margin: 0;
+	padding: 0;
+	list-style-position: inside;
+	list-style-type: upper-alpha;
+	color: green;
+}
+.unordered li:before{
+	content: '\2611';
+	margin-right: 10px;
+	color: red;
+}
+.table{
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	font-size: 16px;
+}
+.table th, .table td{
+	border: 1px solid #ddd;
+	text-align: left;
+	padding: 8px;
+}
+.table th{
+	background-color: #04aa6d;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	color: #f2f2f2;
+}
+.table tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+.table tr:hover{
+	background-color: #ddd;
+}
+.color-initial{
+	color: inherit;
 }

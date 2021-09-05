@@ -17,16 +17,58 @@
 			margin-left: 10px;
 			margin-right: 10px;
 		}
+		.relative-box{
+			width: 500px;
+			height: 500px;
+			margin: auto;
+			background-color: #04AA6D;
+			position: relative;
+		}
+		.absolute-box{
+			width: 200px;
+			height: 200px;
+			background-color: #ddd;
+			position: absolute;
+			left: 150px;
+			top: 150px;
+		}
+		.fixed-box{
+			width: 50px;
+			height: 50px;
+			background-color: #04AA6D;
+			position: fixed;
+			right: 0;
+			top: 50%;
+		}
+		.d-inline{
+			display: inline;
+		}
+		.d-inline-block{
+			display: inline-block;
+		}
+		.d-block{
+			display: block;
+		}
+		.d-none{
+			display: none;
+		}
+		.v-none{
+			visibility: hidden;
+		}
 	</style>
 </head>
 <body>
 	<!-- This is a comment -->
-	<h1>Header 1</h1>
-	<h2 class="header">Header 2</h2>
+	<div class="fixed-box"></div>
+	<div class="relative-box">
+		<div class="absolute-box"></div>
+	</div>
+	<h1 style="width: 500px" class="d-inline-block">Header 1</h1>
+	<h2 class="header d-inline">Header 2</h2>
 	<h3>Header 3</h3>
 	<h4 class="header">Header 4</h4>
-	<h5>Header 5</h5>
-	<h6 class="header">Header 6</h6>
+	<h5 class="d-none">Header 5</h5>
+	<h6 class="header v-none">Header 6</h6>
 
 	<img src="images/Laptop-computer.jpg" width="350" height="100">
 	<img src="http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSBPGwCy_mUW4fb-" width="350" height="100">
@@ -81,7 +123,7 @@
 
 	<form method="get" action="submit.php">
 		<label for="text">Text</label>
-		<input type="text" name="text" id="text" placeholder="Text" required value="Hello"><br>
+		<input type="text" name="text" id="text" placeholder="Text" required value="Hello" style="text-transform: uppercase;"><br>
 		<label for="number">Number</label>
 		<input type="number" name="number" id="number" placeholder="Number" max="10" min="-10" step="5" required><br>
 		<label for="email">Email</label>
@@ -170,6 +212,58 @@
 		</tfoot>
 	</table>
 
+	<table class="table">
+		<thead>
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td colspan="2">5</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td rowspan="2">4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td colspan="6">
+					<marquee scrollamount="1" scrolldirection="left">Scrollable text</marquee>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+			</tr>
+		</tfoot>
+	</table>
+
 
 	<div class="container">
 		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -178,6 +272,99 @@
 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 	</div>
 
+	<div>
+		<p class="text-red text-right">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<p class="text-green text-underline">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<p class="text-green text-center text-upper text-em">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<p class="text-green text-justify text-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus <span class="color-initial">PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<p class="text-justify" style="height: 100px; overflow: auto;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	</div>
+
+	<div>
+		<ul class="unordered">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+		<ol class="ordered">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ol>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+			</tr>
+		</tfoot>
+	</table>
 <br>
 <br>
 <br>
