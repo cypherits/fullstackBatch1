@@ -135,3 +135,160 @@ button.btn{
 button.btn:hover{
 	background: #049862;
 }
+.linear-gradient-1{
+	width: 200px;
+	height: 100px;
+	background-image: linear-gradient(45deg, green, red, yellow);
+}
+.linear-gradient-2{
+	width: 200px;
+	height: 100px;
+	background-image: repeating-linear-gradient(45deg, green, red 10%, yellow 10%);
+}
+.linear-gradient-3{
+	width: 200px;
+	height: 100px;
+	background-image: radial-gradient(red, green);
+}
+.linear-gradient-4{
+	width: 200px;
+	height: 100px;
+	background-image: radial-gradient(circle, red, green 70%);
+}
+.linear-gradient-5{
+	width: 200px;
+	height: 100px;
+	background-image: repeating-radial-gradient(circle, red, green 10%, yellow 10%);
+}
+.gradient-btn{
+	display: block;
+	margin:8px;
+	padding: 8px 12px;
+	font-size: 1.2em;
+	cursor: pointer;
+	color: #f2f2f2;
+	border: none;
+	border-radius: 4px;
+	background-image: linear-gradient(180deg, #00d12d, #00a824, #00d12d);
+}
+.gradient-btn:hover{
+	background-image: linear-gradient(180deg, #00a824, #00d12d, #00a824);
+}
+.shadow-box{
+	width: 200px;
+	height: 200px;
+	background-color: #00a824;
+	margin: auto;
+	box-shadow: 1px 31px 35px -21px rgba(0,0,0,0.75);
+}
+.transition-width{
+	width: 200px;
+	height: 100px;
+	background-color: green;
+	font-size: 1.2em;
+	transition: all 2s;
+}
+.transition-width:hover{
+	width: 500px;
+	height: 200px;
+	font-size: 1.8em;
+}
+.transform{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	margin-top: 100px;
+	transition: all 1s;
+}
+.tr-translate:hover{
+	transform: translate(50px, -20px);
+}
+.tr-rotate:hover{
+	transform: rotate(30deg);
+}
+.tr-scale:hover{
+	margin-left: 50px;
+	transform: scale(2, 2);
+}
+.tr-skew:hover{
+	transform: skew(20deg, 45deg);
+}
+.anime-wrap{
+	width: 600px;
+	height: 600px;
+	background-color: #04aa6d;
+	margin: auto;
+	position: relative;
+}
+@keyframes animete{
+	25%{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: #33f5e5;
+		left: 250px;
+		top: 250px;
+	}
+	50%{
+		width: 50px;
+		height: 50px;
+		border-radius: 0px;
+		background-color: #f26bcc;
+		left: 550px;
+		top: 550px;
+	}
+	75%{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: #33f5e5;
+		left: 250px;
+		top: 250px;
+	}
+	100%{
+		width: 50px;
+		height: 50px;
+		border-radius: 0px;
+		background-color: #f26bcc;
+		left: 0px;
+		top: 0px;
+	}
+}
+.anime-obj-1{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 50px;
+	height: 50px;
+	background-color: #f26bcc;
+	border-radius: 0px;
+	animation-name: animete;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+.anime-obj-2{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 50px;
+	height: 50px;
+	background-color: #f26bcc;
+	border-radius: 0px;
+	animation-name: animete;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+}
+.anime-obj-3{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 50px;
+	height: 50px;
+	background-color: #f26bcc;
+	border-radius: 0px;
+	animation-name: animete;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-delay: 2s;
+}
