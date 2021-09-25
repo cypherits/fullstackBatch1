@@ -18,6 +18,9 @@
 <button id="button">Hello</button>
 
 <p class="class"></p>
+<p class="class"></p>
+<p class="class1"></p>
+<p class="class1"></p>
 <p id="id"></p>
 <input type="text" name="name" value="hello">
 
@@ -103,7 +106,15 @@
 	console.log( array2);
 	console.log( array2.toString());
 
-	document.getElementsByClassName('class')[0].innerHTML = array2.toString();
+	var pClass = document.getElementsByClassName('class');
+	pClass[0].innerHTML = array2.toString();
+	pClass[1].innerHTML = array2.join(' - ');
+
+	var pClass1 = document.getElementsByClassName('class1');
+
+	for (var i = pClass1.length - 1; i >= 0; i--) {
+		pClass1[i].innerHTML = 'Hello World!';
+	}
 
 	document.getElementById('id').innerHTML = array1.join(' - ');
 
@@ -115,6 +126,130 @@
 
 	document.getElementsByName('name')[0].value = 'hello World!';
 
+
+	var cars = ['Toyota', 'Honda'];
+	cars.push('BMW');
+
+	console.log(cars);
+
+	cars.pop();
+
+	console.log(cars);
+
+	cars.unshift("BMW");
+
+	console.log(cars);
+
+	cars.shift();
+
+	console.log(cars);
+
+	delete cars[1];
+
+	console.log(cars[1]);
+
+	console.log(array2.length);
+
+	// conditional statements
+
+	var X = 'Hello!';
+
+	if(X == 'hello'){
+		console.log(true);
+	}else if(X == 'Hello'){
+		console.log(null);
+	}else {
+		console.log(false);
+	}
+
+	/*
+	* == true if both side are equal
+	* > true if left side is greater than right side
+	* < true if left side is smaller than right side
+	* >= true if left side is greater than or equal to right side
+	* <= true if left side is smaller than or equal to right side
+	*/
+	var a = 6;
+	if(a > 5){
+		console.log('condition 1');
+	}else if(a < 5){
+		console.log('condition 2');
+	}else if(a >= 5){
+		console.log('condition 3');
+		if(a <= 5){
+			console.log('condition 3.1');
+		}else{
+			console.log('condition not matched in 3');
+		}
+	}
+
+	if(xyz = 5){
+		console.log(xyz);
+	}
+	var x = 12;
+	if (x > 5 && x < 10) {
+		console.log(true);
+	}else {
+		console.log(false);
+	}
+
+	var x = 4;
+
+	if(x > 10 || x < 5){
+		console.log(true);
+	}else {
+		console.log(false);
+	}
+
+	var x = 'hello';
+
+	switch (x) {
+		case 'hello':
+		case 'hi':
+			console.log('Greetings');
+			break;
+		case 'world':
+			console.log('Earth');
+			break;
+		default:
+			console.log('default');
+			break;
+	}
+
+	x = 5;
+	y = 3;
+
+	z = x % y;
+
+	console.log(z);
+
+	// loop
+
+	for(let i = 1; i <= 5; i++){
+		for(let j = 5; j >= 1; j--){
+			console.log('nested for i = ' + i + ' j = ' + j);
+		}
+	}
+
+	var x = 10;
+
+	while (x > 0) {
+		console.log('While '+x);
+		x -= 1;
+	}
+
+	x = 10;
+
+	do{
+		console.log('Do ' + x);
+		x--;
+	}while (x > 10);
+
+	var x = ['hello', 'world', 'how', 'are', 'things'];
+
+	x.forEach(function(el, ind){
+		console.log(el, ind);
+	});
 
 </script>
 <script type="text/javascript" src="js/app.js"></script>
