@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock</title>
+	<style type="text/css">
+		body{
+			background-color: lightgreen;
+			font-family: monospace;
+		}
+		#clock{
+			display: flex;
+		}
+		.col{
+			background: tomato;
+			color: white;
+			font-size: 3em;
+			padding: 10px 5px;
+		}
+		#test{
+			width: 100px;
+			height: 100px;
+			transition: transform 3s;
+			background: red;
+		}
+		#test:hover{
+			transform: rotate(720deg);
+		}
+	</style>
+</head>
+<body>
+<div id="clock">
+	<div class="col" id="h">00</div>
+	<div class="col">:</div>
+	<div class="col" id="m">00</div>
+	<div class="col">:</div>
+	<div class="col" id="s">00</div>
+	<div class="col" id="a">AM</div>
+</div>
+
+<div id="test"></div>
+
+<script type="text/javascript">
+	function updateTime(){
+		let d = new Date();
+
+		let h = d.getHours();
+		let m = d.getMinutes();
+		let s = d.getSeconds();
+
+		let a = 'AM';
+
+		if(s < 10){
+			s = '0'+s;
+		}
+		if(m < 10){
+			m = '0'+m;
+		}
+
+		if(h > 11){
+			a = 'PM';
+			h -= 12;
+		}
+
+		if(h == 0){
+			h = 12;
+		}
+
+		if(h < 10){
+			h = '0'+h;
+		}
+
+		document.getElementById('h').innerHTML = h;
+		document.getElementById('m').innerHTML = m;
+		document.getElementById('s').innerHTML = s;
+		document.getElementById('a').innerHTML = a;
+
+	}
+
+	updateTime();
+
+	setInterval(updateTime, 1000);
+</script>
+</body>
+</html>

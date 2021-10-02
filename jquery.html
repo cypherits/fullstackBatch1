@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+</head>
+<body>
+	<button class="class" id="hello">hello</button>
+	<button class="class" id="holla">holla</button>
+	<button class="class2" id="hi" type="reset">hi</button>
+	<button class="class2" id="hi" bg="red">hi</button>
+
+<script type="text/javascript" src="bootstrap/js/jquery.js"></script>
+<script type="text/javascript">
+	// tag selector
+	// $('button').text('hi');
+	// class selector
+	// $('.class').text('halo');
+	// id selector
+	$('#holla').text('welcome');
+	$('button[type="reset"]').text('reset');
+	$('.class2[bg="red"]').css('background', 'red');
+</script>
+</body>
+</html>

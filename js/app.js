@@ -1,5 +1,5 @@
 function my_first_function(){
-	alert('hello World!');
+	// alert('hello World!');
 }
 
 my_first_function();
@@ -56,7 +56,7 @@ function xy(x, y, callback){
 }
 
 xy(5, 6, function(a){
-	alert(a);
+	// alert(a);
 });
 xy(5, 8, function(a){
 	console.log(a);
@@ -89,4 +89,76 @@ document.getElementById('input').addEventListener('keyup', function(e){
 
 document.getElementById('file').addEventListener('change', function(e){
 	console.log(e);
-})
+});
+
+var jsonObj = {
+	"firstName": "Azim",
+	"lastName": "Uddin",
+	"displayFullName": function(){
+		return this.firstName + ' ' + this.lastName;
+	}
+};
+console.log(jsonObj.firstName);
+
+var flagshipCars = {
+	"BMW": "X7 SUV",
+	"Audi": "R8",
+	"Toyota": "Prado",
+	"Mitshubishi": "Lancer"
+};
+
+for (key in flagshipCars) {
+	console.log(flagshipCars[key]);
+}
+var retrivedData = '{"name": "Azim", "address": "south kamalapur"}';
+
+retrivedData = JSON.parse(retrivedData);
+
+document.getElementById('name').innerHTML = retrivedData.name;
+document.getElementById('address').innerHTML = retrivedData.address;
+
+
+var person = {
+	"sakib": {
+		"name": "Sakib",
+		"address": "south kamalapur"
+	},
+	"sheikh": {
+		"name": "Nasif",
+		"address": "Dhanmondi"
+	},
+	"ahmed": {
+		"name": "nasif",
+		"address": "niketon"
+	},
+	"nowshan": {
+		"name": "Pavel",
+		"addresses": {
+			"home": "mirpur",
+			"office": "kakrail",
+			"institute": "mugda",
+		}
+	}
+}
+
+console.log(person.nowshan.name);
+
+function sendAjaxPost(url, data, callback){
+	const ajax = new XMLHttpRequest();
+	ajax.onload = function(){
+		callback(this.responseText);
+	}
+
+	ajax.open("POST", url);
+	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	ajax.send(data);
+}
+
+document.getElementById("calcSubmit").addEventListener("click", function(){
+	const num1 = document.getElementById("num1").value;
+	const num2 = document.getElementById("num2").value;
+	const data = "num1="+ num1 + "&num2="+ num2;
+	sendAjaxPost("http://localhost/ajax/calc.php", data, function(r){
+		document.getElementById("result").innerHTML = r;
+	});
+});

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Analog Clock</title>
+	<style type="text/css">
+		body{
+			background: darkgreen;
+		}
+		#clock{
+			width: 300px;
+			height: 300px;
+			position: relative;
+			margin: auto;
+			margin-top: calc(50vh - 150px);
+			border: 6px solid gold;
+			background: darkred;
+			border-radius: 50%;
+		}
+		.mark{
+			position: absolute;
+			width: 2px;
+			height: 250px;
+			left: 149px;
+			top: 10px;
+			border-top: 15px solid lightgreen;
+			border-bottom: 15px solid lightgreen;
+		}
+		.mark:nth-child(5n+1){
+			height: 230px;
+			border-top: 25px solid gold;
+			border-bottom: 25px solid gold;
+		}
+		#second{
+			position: absolute;
+			width: 0px;
+			height: 0px;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+			border-bottom: 105px solid tomato;
+			left: 147px;
+			bottom: 150px;
+			transform-origin: 50% 100%;
+			z-index: 3;
+			transition: transform linear 1s;
+		}
+		#minute{
+			position: absolute;
+			width: 0px;
+			height: 0px;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 90px solid lightgreen;
+			left: 145px;
+			bottom: 150px;
+			transform-origin: 50% 100%;
+			z-index: 2;
+			transition: transform linear 1s;
+		}
+		#hour{
+			position: absolute;
+			width: 0px;
+			height: 0px;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-bottom: 70px solid green;
+			left: 143px;
+			bottom: 150px;
+			transform-origin: 50% 100%;
+			z-index: 1;
+			transition: transform linear 1s;
+		}
+		#center{
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			left: 143px;
+			top: 143px;
+			z-index: 4;
+			border-radius: 50%;
+			background-image: radial-gradient(lightgray, #464646);
+		}
+	</style>
+</head>
+<body>
+<div id="clock">
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div class="mark"></div>
+	<div id="second"></div>
+	<div id="minute"></div>
+	<div id="hour"></div>
+	<div id="center"></div>
+</div>
+
+<script type="text/javascript">
+	const marks = document.getElementsByClassName('mark');
+	let rotate = 0;
+
+	for(mark of marks){
+		mark.style.transform = 'rotate('+rotate+'deg)';
+		rotate += 6;
+	}
+
+	let d = new Date();
+	let h = ((d.getHours() % 12) * 30) + parseInt(d.getMinutes() / 12) * 6;
+	let m = d.getMinutes() * 6;
+	let s = d.getSeconds() * 6;
+
+	let hh = document.getElementById('hour');
+	let mh = document.getElementById('minute');
+	let sh = document.getElementById('second');
+
+	hh.style.transform = 'rotate('+h+'deg)';
+	mh.style.transform = 'rotate('+m+'deg)';
+	sh.style.transform = 'rotate('+s+'deg)';
+
+
+	setInterval(function(){
+		s += 6;
+		sh.style.transform = 'rotate('+s+'deg)';
+		if(s == 360){
+			// s = 0;
+			m += 6;
+			mh.style.transform = 'rotate('+m+'deg)';
+
+			if((m % 72) == 0){
+				h += 6;
+				hh.style.transform = 'rotate('+h+'deg)';
+
+			// 	if(m == 360){
+			// 		m = 0;
+			// 	}
+
+			// 	if(h == 360){
+			// 		h = 0;
+			// 	}
+			}
+		}
+	}, 1000);
+
+</script>
+</body>
+</html>
