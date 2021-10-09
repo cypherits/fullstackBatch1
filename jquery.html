@@ -2,6 +2,20 @@
 <html>
 <head>
 	<title>jQuery</title>
+	<style type="text/css">
+		tr:nth-child(even){
+			background: lightgray;
+		}
+		.flexbox{
+			width: 100px;
+			height: 100px;
+			margin: 5px;
+			background: lightgreen;
+		}
+		.d-none{
+			display: none;
+		}
+	</style>
 </head>
 <body>
 	<button class="class" id="hello">hello</button>
@@ -9,6 +23,110 @@
 	<button class="class2" id="hi" type="reset">hi</button>
 	<button class="class2" id="hi" bg="red">hi</button>
 
+	<table style="width: 600px; border-collapse: collapse;" border="1">
+		<tr>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+		</tr>
+		<tr>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+		</tr>
+		<tr>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+		</tr>
+		<tr>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+		</tr>
+		<tr>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+		</tr>
+		<tr>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+		</tr>
+		<tr>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+			<td>hello</td>
+		</tr>
+	</table>
+
+	<button id="clickable">Click me</button>
+
+	<input type="number" id="numKeyEvent" style="border: 1px solid red; outline: none;">
+
+	<form id="myForm" method="post" action="#">
+		<fieldset>
+			<legend>Form Events</legend>
+			<label id="formMsg"></label><br><br>
+			<input type="text" name="name" class="form-control" placeholder="Name"><br><br>
+			<input type="email" name="email" class="form-control" placeholder="E-Mail"><br><br>
+			<select name="age" class="select-control">
+				<option value="0-2">0-2</option>
+				<option value="3-12">3-12</option>
+				<option value="13-25">13-25</option>
+				<option value="25+">25+</option>
+			</select><br><br>
+			<button type="submit">Submit</button>
+		</fieldset>
+	</form>
+
+	<img src="https://via.placeholder.com/3998" width="400" id="bigimg">
+
+	<div style="display: flex;" id="flexParent">
+		<div class="flexbox"></div>
+	</div>
+
+	<p id="readDom" background="lightgreen" style="border: 1px solid green">Hello World<br> hello world</p>
+	<p id="writeDom" background="lightgreen"></p>
+
+	<input type="email" name="email" id="writeEmail" placeholder="E-Mail"><br><br>
+
+	<button id="hideDiv">Hide</button>
+	<button id="showDiv">Show</button>
+	<button id="toggleDiv">Toggle</button><br><br>
+	<div id="targetShowHide">Hide Me</div>
+
+
+	<button id="hideDiv1">Hide</button>
+	<button id="showDiv1">Show</button>
+	<button id="toggleDiv1">Toggle</button><br><br>
+	<div id="targetShowHide1">Hide Me</div>
+
+
+	<button id="hideDiv2">Hide</button>
+	<button id="showDiv2">Show</button>
+	<button id="toggleDiv2">Toggle</button><br><br>
+	<div id="targetShowHide2">Hide Me</div>
+
+
+	<button id="hideDiv3">Hide</button>
+	<button id="showDiv3">Show</button>
+	<button id="toggleDiv3">Toggle</button><br><br>
+	<div id="targetShowHide3">Hide Me</div>
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <script type="text/javascript" src="bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
 	// tag selector
@@ -19,6 +137,113 @@
 	$('#holla').text('welcome');
 	$('button[type="reset"]').text('reset');
 	$('.class2[bg="red"]').css('background', 'red');
+	// mouse events
+	// $('selector').click();
+	// $('selector').dblclick();
+	// $('selector').mouseenter();
+	// $('selector').mouseleave();
+	// $('selector').mousedown();
+	// $('selector').mouseup();
+	// $('selector').hover();
+	$('#clickable').click(function(e){
+		alert('cliked');
+	});
+	// keyboard events
+	// $('selector').keyup();
+	// $('selector').keydown();
+	// $('selector').keypress();
+	$('#numKeyEvent').keyup(function(e) {
+		let x = parseFloat($('#numKeyEvent').val());
+		if(x > 10){
+			$(this).css('border', '1px solid green');
+		}else{
+			$(this).css('border', '1px solid red');
+		}
+	});
+	// form events
+	$('.form-control').focus(function(){
+		$('#formMsg').text('Please Enter Your '+ $(this).attr('placeholder'));
+	});
+	$('.form-control').blur(function(){
+		$('#formMsg').text('');
+	});
+	$('.select-control').change(function(){
+		alert('you have selected as your age: '+ $(this).val());
+	});
+	$('#myForm').submit(function(e){
+		e.preventDefault();
+		alert('form has been submitted');
+	});
+	// dom event
+	$(window).on('load', function(){
+		// alert('Image Loaded');
+	});
+	$(window).on('resize', function(e){
+		console.log(window.innerWidth, window.innerHeight);
+	});
+
+	// $('.flexbox').click(function(){
+	// 	$('#flexParent').append('<div class="flexbox"></div>');
+	// });
+	$(document).on('click', '.flexbox', function(){
+		$('#flexParent').prepend('<div class="flexbox"></div>');
+	});
+	var x = $('#readDom').html();
+	$('#writeDom').html(x);
+	$('#writeDom').attr('background', 'green');
+	$('#writeEmail').val('a@b.c');
+	console.log($('#readDom').css('border'));
+
+	$('#hideDiv').click(function(){
+		$('#targetShowHide').addClass('d-none');
+	});
+	
+	$('#showDiv').click(function(){
+		$('#targetShowHide').removeClass('d-none');
+	});
+	
+	$('#toggleDiv').click(function(){
+		$('#targetShowHide').toggleClass('d-none');
+	});
+
+
+	$('#hideDiv1').click(function(){
+		$('#targetShowHide1').hide();
+	});
+	
+	$('#showDiv1').click(function(){
+		$('#targetShowHide1').show();
+	});
+	
+	$('#toggleDiv1').click(function(){
+		$('#targetShowHide1').toggle();
+	});
+
+
+	$('#hideDiv2').click(function(){
+		$('#targetShowHide2').fadeOut();
+	});
+	
+	$('#showDiv2').click(function(){
+		$('#targetShowHide2').fadeIn();
+	});
+	
+	$('#toggleDiv2').click(function(){
+		$('#targetShowHide2').fadeToggle();
+	});
+
+
+	$('#hideDiv3').click(function(){
+		$('#targetShowHide3').slideUp();
+	});
+	
+	$('#showDiv3').click(function(){
+		$('#targetShowHide3').slideDown();
+	});
+	
+	$('#toggleDiv3').click(function(){
+		$('#targetShowHide3').slideToggle();
+	});
 </script>
 </body>
 </html>
